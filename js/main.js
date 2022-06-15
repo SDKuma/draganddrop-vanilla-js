@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const main = document.querySelectorAll('.main');
     const boxes = document.querySelectorAll('.box');
     const containers = document.querySelectorAll('.container');
+    const moveHandlers = document.querySelectorAll('.moveHandle');
+
     var over_div = null;
     main.forEach(async con => {
         con.addEventListener('dragover', e => {
@@ -49,9 +51,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }, false)
     });
     document.addEventListener("mouseup", function () {
-        console.log('mouse up');
+        console.log('mouse up----->');
+        boxes.forEach(box => {
+            box.removeAttribute("draggable");
+        });
         document.removeEventListener("mousemove", resize, false);
     }, false);
     //resize end
+
+    //move mandler 
+    moveHandlers.forEach(handler=>{
+        handler.addEventListener("mousedown",function(e){
+            handler.parentNode.setAttribute("draggable", "true");
+        });
+
+        handler.addEventListener("mouseup",function(e){
+            handler.parentNode.removeAttribute("draggable");
+        });
+
+        handler.addEventListener('dragend', () => {
+            handler.parentNode.removeAttribute("draggable");
+        });
+    });
+
+    document.addEventListener('dragend',()=>{
+        boxes.forEach(box => {
+            box.removeAttribute("draggable");
+        });        
+    });
+
+
 
 })

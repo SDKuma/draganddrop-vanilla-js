@@ -3,11 +3,14 @@ body {
     height: 100%;
 }
 
+.moveHandle{
+    cursor:move;
+}
+
 .box {
     width: auto;
     height: auto;
-    background-color: red;
-    cursor: move;
+    background-color: red;   
     padding: 10px;
     border: 1px black solid;
     margin: 5px;
@@ -20,7 +23,7 @@ body {
     background-color: white;
     cursor: w-resize;
     z-index: 10000;
-    float: left;
+    float: right;
 }
 
 .b-handler {
