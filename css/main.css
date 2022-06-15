@@ -1,0 +1,72 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: auto;
+    height: auto;
+    background-color: red;
+    cursor: move;
+    padding: 10px;
+    border: 1px black solid;
+    margin: 5px;
+}
+
+.r-handler {
+    position: relative;
+    height: 98%;
+    width: 5px;
+    background-color: white;
+    cursor: w-resize;
+    z-index: 10000;
+    float: left;
+}
+
+.b-handler {
+    position: relative;
+    height: 5px;
+    width: 100%;
+    float: left;
+    background-color: white;
+    cursor: s-resize;
+    z-index: 10000;
+}
+
+.dragging {
+    box-shadow: 5px 5px 5px;
+}
+
+.container {
+    min-width: 250px;
+    height: 150px;
+    border: 1px black dashed;
+    width: 100%;
+    position: relative;
+    z-index: 10000;
+}
+
+.content {
+    float: left;
+    width: 98%;
+    height: 98%;
+}
+
+.main {
+    background-color: #333;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: DodgerBlue;
+    max-width: 100%;
+}
+
+.colided {
+    background-color: black;
+}
+
+.outer {
+    padding: 10px;
+    background-color: #333;
+}
